@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "synapsed8jugbt"
+		},
+		"Data_Warehouse_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=synapse68kj7xi.sql.azuresynapse.net;Initial Catalog=sql68kj7xi"
+		},
+		"synapse68kj7xi-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse68kj7xi.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"synapsed8jugbt-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapsed8jugbt.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"synapse68kj7xi-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://datalake68kj7xi.dfs.core.windows.net"
+		},
+		"synapsed8jugbt-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://datalaked8jugbt.dfs.core.windows.net"
+		}
+	}
+}
