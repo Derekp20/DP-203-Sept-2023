@@ -3,14 +3,49 @@
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "sparkd8jugbt",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "3bc852f6-273d-4ae4-b2dc-569c4277ccf0"
+			}
+		},
 		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
 				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
-			}
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/7b0543e4-275d-4d19-82c3-0441bd4d3b87/resourceGroups/dp203-d8jugbt/providers/Microsoft.Synapse/workspaces/synapsed8jugbt/bigDataPools/sparkd8jugbt",
+				"name": "sparkd8jugbt",
+				"type": "Spark",
+				"endpoint": "https://synapsed8jugbt.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/sparkd8jugbt",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
 		},
 		"cells": [
 			{
@@ -34,14 +69,18 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"tags": [
+						"parameters"
+					]
 				},
 				"source": [
 					"import uuid\r\n",
 					"\r\n",
 					"# Variable for unique folder name\r\n",
 					"folderName = uuid.uuid4()"
-				]
+				],
+				"execution_count": 1
 			},
 			{
 				"cell_type": "markdown",
@@ -65,7 +104,8 @@
 				},
 				"source": [
 					"order_details = spark.read.csv('/data/*.csv', header=True, inferSchema=True)"
-				]
+				],
+				"execution_count": 2
 			},
 			{
 				"cell_type": "markdown",
@@ -104,7 +144,8 @@
 					"\r\n",
 					"# Remove the CustomerName field\r\n",
 					"transformed_df = transformed_df.drop(\"CustomerName\")"
-				]
+				],
+				"execution_count": 3
 			},
 			{
 				"cell_type": "markdown",
@@ -137,7 +178,8 @@
 				"source": [
 					"transformed_df.write.mode(\"overwrite\").parquet('/%s' % folderName)\r\n",
 					"print (\"Transformed data saved in %s!\" % folderName)"
-				]
+				],
+				"execution_count": 4
 			}
 		]
 	}
