@@ -22,7 +22,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DimProduct",
+						"referenceName": "DimProducts",
 						"type": "DatasetReference"
 					},
 					"name": "DimProducrTable"
