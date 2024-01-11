@@ -6,14 +6,14 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Products_Csv",
+						"referenceName": "ProductsCSV",
 						"type": "DatasetReference"
 					},
 					"name": "ProductsText"
 				},
 				{
 					"dataset": {
-						"referenceName": "DimProduct",
+						"referenceName": "DimProducts",
 						"type": "DatasetReference"
 					},
 					"name": "ProductTable"
@@ -42,8 +42,8 @@
 				"          ProductName as string,",
 				"          Color as string,",
 				"          Size as string,",
-				"          ListPrice as decimal(10,0),",
-				"          Discontinued as boolean",
+				"          ListPrice as string,",
+				"          Discontinued as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",

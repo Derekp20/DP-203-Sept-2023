@@ -21,10 +21,10 @@
 					},
 					"staging": {
 						"linkedService": {
-							"referenceName": "synapse68kj7xi-WorkspaceDefaultStorage",
+							"referenceName": "synapsei24ep6w-WorkspaceDefaultStorage",
 							"type": "LinkedServiceReference"
 						},
-						"folderPath": "files"
+						"folderPath": "files/data"
 					},
 					"compute": {
 						"coreCount": 8,
